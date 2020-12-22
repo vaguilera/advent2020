@@ -1,0 +1,20 @@
+departure location: 
+departure station: 
+departure platform: 
+departure track: 
+departure date: 
+departure time: 
+arrival location: 
+arrival station: col0
+arrival platform: 
+arrival track: col0
+class: 
+duration: 
+price: 
+route: 
+row: 
+seat: 
+train: 
+type: 
+wagon: 
+zone: 
