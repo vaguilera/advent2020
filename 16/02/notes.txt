@@ -1,20 +1,27 @@
-departure location: 
-departure station: 
-departure platform: 
-departure track: 
-departure date: 
-departure time: 
-arrival location: 
-arrival station: col0
-arrival platform: 
-arrival track: col0
-class: 
-duration: 
-price: 
-route: 
-row: 
-seat: 
-train: 
-type: 
-wagon: 
-zone: 
+0 departure location: 
+1 departure station: 
+2 departure platform: 
+3 departure track: 
+4 departure date: 
+5 departure time: 
+6 arrival location: 
+7 arrival station: col0
+8 arrival platform: 
+9 arrival track: col0
+10 class: 
+11 duration: 
+12 price: 
+13 route: 
+14 row: 
+15 seat: 
+16 train: 
+17 type: 
+18 wagon: 
+19 zone: 
+
+
+  9   11  17    6   12   18   7  16   5    13   1    8   2   3   4   15   0   19  10   14
+113, 197, 59, 167, 151, 107, 79, 73, 109, 157, 199, 193, 83, 53, 89, 71, 149, 61, 67, 163}
+0      1   2    3    4    5   6   7    8    9   10   11  12  13  14  15   16  17  18   19
+
+149 199 83 53 89 109

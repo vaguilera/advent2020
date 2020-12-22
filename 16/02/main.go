@@ -192,15 +192,36 @@ func checkNum(n int, r rule) int {
 
 func doMagic() {
 
-	for col := 0; col < len(ticket); col++ {
-		fmt.Printf("col:%d rules: ", col)
-		for rul := 0; rul < len(rules); rul++ {
-			valid := allPass(col, rul)
-			if valid {
-				fmt.Printf("%d ", rul)
+	var cols []int
+	var rulz []int
+
+	for i := 0; i < len(ticket); i++ {
+		for col := 0; col < len(ticket); col++ {
+			//fmt.Printf("col:%d rules: ", col)
+			if find(cols, col) != -1 {
+				continue
 			}
+			rulpasses := []int{}
+			for rul := 0; rul < len(rules); rul++ {
+				if find(rulz, rul) != -1 {
+					continue
+				}
+				valid := allPass(col, rul)
+				if valid {
+					rulpasses = append(rulpasses, rul)
+				}
+			}
+
+			if len(rulpasses) == 1 {
+				cols = append(cols, col)
+				rulz = append(rulz, rulpasses[0])
+			}
+
 		}
-		fmt.Printf("\n")
+	}
+
+	for i, v := range cols {
+		fmt.Printf("[%d - %d]\n", v, rulz[i])
 	}
 
 }
@@ -215,4 +236,13 @@ func allPass(col int, rule int) bool {
 
 	return true
 
+}
+
+func find(slice []int, val int) int {
+	for i, item := range slice {
+		if item == val {
+			return i
+		}
+	}
+	return -1
 }
