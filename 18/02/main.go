@@ -41,21 +41,21 @@ func main() {
 }
 
 func calculate(s string) int {
-	ops := r2.FindAllStringSubmatch(s, -1)
-	//fmt.Printf("calculate: %v\n", ops)
+	tokens := strings.Split(s, "*")
 
-	res, _ := strconv.Atoi(ops[0][2])
-	for i := 1; i < len(ops); i++ {
-		n, _ := strconv.Atoi(ops[i][2])
-
-		if ops[i-1][3] == "+" {
-			res += n
-		} else {
-			res *= n
+	accum := 1
+	for _, token := range tokens {
+		ops := strings.Split(token, "+")
+		res := 0
+		for _, n := range ops {
+			ni, _ := strconv.Atoi(n)
+			res += ni
 		}
+
+		accum *= res
 	}
 
-	return res
+	return accum
 
 }
 
